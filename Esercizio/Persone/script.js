@@ -6,7 +6,7 @@ const formPerson = document.getElementById("form-age")
 const rubrica = document.getElementById("rubrica")
 const paragraphAge = document.createElement("p")
 let oldUser = {
-  nome: "default",
+  nome: "dEfAuLt",
   cognome: "User",
   age: 0,
   location: "IT",
@@ -26,7 +26,7 @@ class UserData {
       return (paragraphAge.innerText = `${this.nome} è più grande di ${otherPerson.nome}`)
     } else if (this.age < otherPerson.age) {
       return (paragraphAge.innerText = `${this.nome} è più piccolo di ${otherPerson.nome}`)
-    } else if (otherPerson.nome === "default") {
+    } else if (otherPerson.nome === "dEfAuLt") {
       return (paragraphAge.innerText = ``)
     } else {
       return (paragraphAge.innerText = `${this.nome} e ${otherPerson.nome} hanno la stessa età`)
