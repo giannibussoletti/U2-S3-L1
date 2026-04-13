@@ -4,7 +4,7 @@ const specieInput = document.getElementById("specie-input")
 const razzaInput = document.getElementById("razza-input")
 const formAnimal = document.getElementById("form-animal")
 const animalList = document.getElementById("rubrica")
-const paragraphOwner = document.createElement("p")
+
 let oldPet = {
   nomeAnimale: "GaRgAnTuEsCo",
   padrone: "Francesco",
@@ -19,7 +19,8 @@ class AnimalData {
     this.specie = _specie
     this.razza = _razza
   }
-  ownerConfront = function (otherPet) {
+
+  ownerConfront = function (otherPet, paragraphOwner) {
     if (this.padrone === otherPet.padrone) {
       return (paragraphOwner.innerText = `${this.nomeAnimale} e ${otherPet.nomeAnimale} hanno lo stesso padrone`)
     } else if (otherPet.nomeAnimale === "GaRgAnTuEsCo") {
@@ -32,6 +33,7 @@ class AnimalData {
 
 formAnimal.addEventListener("submit", function (e) {
   e.preventDefault()
+
   const nomeAnimale = nomeAnimaleInput.value
   const padrone = PadroneInput.value
   const specie = specieInput.value
@@ -60,7 +62,8 @@ formAnimal.addEventListener("submit", function (e) {
   parRazza.classList.add("card-text")
   parRazza.innerText = `Razza: ${newAnimal.razza}`
 
-  newAnimal.ownerConfront(oldPet)
+  const paragraphOwner = document.createElement("p")
+  newAnimal.ownerConfront(oldPet, paragraphOwner)
 
   divCard.appendChild(divBody)
   divBody.appendChild(h5)
