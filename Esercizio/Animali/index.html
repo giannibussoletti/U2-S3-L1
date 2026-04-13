@@ -9,6 +9,21 @@
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous" />
+    <style>
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateX(-20em);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .card {
+        animation: 1s ease-out 0s 1 normal forwards slide-in;
+      }
+    </style>
   </head>
   <body class="bg-secondary">
     <main>
@@ -20,19 +35,39 @@
               <form id="form-animal" class="d-flex flex-column gap-lg-4">
                 <div class="nome-con">
                   <label for="nome-input" class="form-label">Nome del tuo animale</label>
-                  <input type="text" class="form-control" id="nome-input" placeholder="Fido" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome-input"
+                    placeholder="Fido"
+                    required />
                 </div>
                 <div class="owner-con">
                   <label for="owner-input" class="form-label">Il tuo nome</label>
-                  <input type="text" class="form-control" id="owner-input" placeholder="Mario" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="owner-input"
+                    placeholder="Mario"
+                    required />
                 </div>
                 <div class="specie-con">
                   <label for="specie-input" class="form-label">Specie</label>
-                  <input type="text" class="form-control" id="specie-input" placeholder="Cane" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="specie-input"
+                    placeholder="Cane"
+                    required />
                 </div>
                 <div class="razza-con">
                   <label for="razza-input" class="form-label">Razza</label>
-                  <input type="text" class="form-control" id="razza-input" placeholder="Labrador" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="razza-input"
+                    placeholder="Labrador"
+                    required />
                 </div>
                 <div id="buttonSubmit" class="mt-3">
                   <button class="btn btn-info w-25" type="submit">Invia</button>

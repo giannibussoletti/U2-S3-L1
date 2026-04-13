@@ -12,6 +12,8 @@ let oldPet = {
   razza: "Dalmata",
 }
 
+let countIteration = 1
+
 class AnimalData {
   constructor(_nomeAnimale, _padrone, _specie, _razza) {
     this.nomeAnimale = _nomeAnimale
@@ -41,7 +43,7 @@ formAnimal.addEventListener("submit", function (e) {
   const newAnimal = new AnimalData(nomeAnimale, padrone, specie, razza)
 
   const divCard = document.createElement("div")
-  divCard.classList.add("card", "my-3")
+  divCard.classList.add("card", "my-3", "order-first")
 
   const divBody = document.createElement("div")
   divBody.classList.add("card-body")
@@ -65,6 +67,13 @@ formAnimal.addEventListener("submit", function (e) {
   const paragraphOwner = document.createElement("p")
   newAnimal.ownerConfront(oldPet, paragraphOwner)
 
+  console.log(countIteration)
+  const removeOrderFirst = document.querySelectorAll(".order-first")
+  const removeLength = removeOrderFirst.length - 1
+  if (countIteration >= 2) {
+    removeOrderFirst[removeLength].classList.remove("order-first")
+  }
+
   divCard.appendChild(divBody)
   divBody.appendChild(h5)
   divBody.appendChild(h6)
@@ -75,4 +84,5 @@ formAnimal.addEventListener("submit", function (e) {
 
   oldPet = newAnimal
   formAnimal.reset()
+  countIteration += 1
 })
