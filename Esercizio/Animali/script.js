@@ -19,7 +19,7 @@ class AnimalData {
     this.specie = _specie
     this.razza = _razza
   }
-  ageConfront = function (otherPet) {
+  ownerConfront = function (otherPet) {
     if (this.padrone === otherPet.padrone) {
       return (paragraphOwner.innerText = `${this.nomeAnimale} e ${otherPet.nomeAnimale} hanno lo stesso padrone`)
     } else {
@@ -57,6 +57,8 @@ formAnimal.addEventListener("submit", function (e) {
   const parRazza = document.createElement("p")
   parRazza.classList.add("card-text")
   parRazza.innerText = `Razza: ${newAnimal.razza}`
+
+  newAnimal.ownerConfront(oldPet)
 
   divCard.appendChild(divBody)
   divBody.appendChild(h5)
