@@ -67,7 +67,6 @@ formAnimal.addEventListener("submit", function (e) {
   const paragraphOwner = document.createElement("p")
   newAnimal.ownerConfront(oldPet, paragraphOwner)
 
-  console.log(countIteration)
   const removeOrderFirst = document.querySelectorAll(".order-first")
   const removeLength = removeOrderFirst.length - 1
   if (countIteration >= 2) {
