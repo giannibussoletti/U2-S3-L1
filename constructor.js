@@ -63,10 +63,10 @@ const NamedPerson = function (
   _nome, // L'underscore davanti non è obbligatorio
   _cognome, // ma consigliato per rendere più chiara la differenza
   _età, //tra il nome del parametro e il nome della proprietà
-  _skill, //
-  _paese, //
-  _tel, //
-  _email, //
+  _skill,
+  _paese,
+  _tel,
+  _email,
 ) {
   this.nome = _nome
   this.cognome = _cognome
@@ -78,7 +78,6 @@ const NamedPerson = function (
   this.salutare = function () {
     return `Ciao, io mi chiamo ${this.nome} ${this.cognome} e mi piace ${this.skill[0]}`
   }
-  //
 }
 
 const np1 = new NamedPerson(
@@ -92,3 +91,9 @@ const np1 = new NamedPerson(
 )
 
 console.log(np1)
+
+// questa capacità di JS di creare le funzioni costruttore è insita nel linguaggio dall'alba dei tempi
+// a partire da ES6, proprio per abbracciare tutti i nuovi sviluppatori web che sono saltati a bordo
+// di JS per il successo delle web app (magari linguaggi OOP), è stata introdotta la parola chiave "class"
+
+// --> class.js
