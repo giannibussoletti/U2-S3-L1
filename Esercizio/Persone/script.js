@@ -26,6 +26,8 @@ class UserData {
       return (paragraphAge.innerText = `${this.nome} è più grande di ${otherPerson.nome}`)
     } else if (this.age < otherPerson.age) {
       return (paragraphAge.innerText = `${this.nome} è più piccolo di ${otherPerson.nome}`)
+    } else if (otherPerson.nome === "default") {
+      return (paragraphAge.innerText = ``)
     } else {
       return (paragraphAge.innerText = `${this.nome} e ${otherPerson.nome} hanno la stessa età`)
     }

@@ -6,7 +6,7 @@ const formAnimal = document.getElementById("form-animal")
 const animalList = document.getElementById("rubrica")
 const paragraphOwner = document.createElement("p")
 let oldPet = {
-  nomeAnimale: "Fido",
+  nomeAnimale: "GaRgAnTuEsCo",
   padrone: "Francesco",
   specie: "Cane",
   razza: "Dalmata",
@@ -22,6 +22,8 @@ class AnimalData {
   ownerConfront = function (otherPet) {
     if (this.padrone === otherPet.padrone) {
       return (paragraphOwner.innerText = `${this.nomeAnimale} e ${otherPet.nomeAnimale} hanno lo stesso padrone`)
+    } else if (otherPet.nomeAnimale === "GaRgAnTuEsCo") {
+      return (paragraphOwner.innerText = "")
     } else {
       return (paragraphOwner.innerText = `Padrone Unico`)
     }
